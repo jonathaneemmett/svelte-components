@@ -1,5 +1,6 @@
 <script>
-	export let search = '';
+	/** @type {string} */
+	let search = '';
 
 	/** @type {object[]} */
 	let items = [];
