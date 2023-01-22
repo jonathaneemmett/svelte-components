@@ -29,6 +29,7 @@
 <section class="section">
 	<div class="section__wrapper">
 		<h2 class="section__headline">Select component demo</h2>
+		<p>This is not a true select, but a custom svelte component that acts like a select.</p>
 		<Select items={sports} />
 	</div>
 </section>
@@ -49,6 +50,12 @@
 		max-width: 30rem;
 	}
 
+	.section__wrapper p {
+		font-size: 0.8rem;
+		font-weight: 400;
+		padding-block-end: 0.5rem;
+	}
+
 	.section__header h1 {
 		font-size: 2rem;
 		font-weight: 700;
@@ -58,7 +65,7 @@
 	.section__header p {
 		font-size: 1rem;
 		font-weight: 400;
-
+		padding-block: 0;
 		text-align: center;
 	}
 </style>
