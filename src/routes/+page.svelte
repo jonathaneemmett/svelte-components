@@ -15,6 +15,7 @@
 		<div class="section__header">
 			<h1>Svelte/SvelteKit Components</h1>
 			<p>These are custom Svelte components.</p>
+			<p>(more coming soon!)</p>
 		</div>
 	</div>
 </section>

@@ -71,7 +71,13 @@
 
 	.menu li:hover {
 		width: 100%;
-		background-color: #151515;
+		background-color: #ccc;
+		border-radius: 5px;
+		transition: 0.3s ease-in-out;
+	}
+
+	.menu li:hover a {
+		color: #fff;
 		transition: 0.3s ease-in-out;
 	}
 
@@ -81,7 +87,7 @@
 	}
 
 	a.active {
-		color: purple;
+		color: #4c9e9e;
 	}
 
 	/* Responsive */
