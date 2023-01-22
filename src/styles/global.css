@@ -1,0 +1,36 @@
+/* Globals */
+:root {
+}
+
+* {
+	margin-block: 0;
+	margin-inline: 0;
+	padding-block: 0;
+	padding-inline: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+html,
+body {
+	height: 100vh;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #333;
+	background-color: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
