@@ -12,6 +12,14 @@
 
 <section class="section">
 	<div class="section__wrapper">
+		<div class="section__header">
+			<h1>Svelte/SvelteKit Components</h1>
+			<p>These are custom Svelte components.</p>
+		</div>
+	</div>
+</section>
+<section class="section">
+	<div class="section__wrapper">
 		<h2 class="section__headline">Search with debounce demo</h2>
 		<p>(searches interpol as a demo)</p>
 		<Search />
@@ -38,5 +46,18 @@
 		position: relative;
 		width: 100%;
 		max-width: 30rem;
+	}
+
+	.section__header h1 {
+		font-size: 2rem;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.section__header p {
+		font-size: 1rem;
+		font-weight: 400;
+
+		text-align: center;
 	}
 </style>
