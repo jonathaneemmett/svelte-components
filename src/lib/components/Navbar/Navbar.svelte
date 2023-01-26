@@ -53,6 +53,7 @@
 		padding-inline: 1rem;
 		background-color: #fff;
 		color: #151515;
+		height: 100px;
 	}
 
 	.nav-links a {
