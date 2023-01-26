@@ -5,6 +5,7 @@
 	 * @type {any[]}
 	 */
 	export let items = [];
+	export let id = '';
 	export let placeholder = 'Select...';
 	export let selected = { label: placeholder, value: '' };
 
@@ -40,6 +41,8 @@
 </script>
 
 <div class="select">
+	<!-- So formData has a value -->
+	<input type="text" bind:value={selected['label']} {id} hidden />
 	<div
 		class="select__label"
 		on:click={() => (isOpen = !isOpen)}

@@ -30,7 +30,7 @@
 	<div class="section__wrapper">
 		<h2 class="section__headline">Select component demo</h2>
 		<p>This is not a true select, but a custom svelte component that acts like a select.</p>
-		<Select items={sports} />
+		<Select id="sport" items={sports} />
 	</div>
 </section>
 
