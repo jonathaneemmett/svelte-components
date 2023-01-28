@@ -1,78 +1,51 @@
 <script>
+	import NavDrop from './dropdown/NavDrop.svelte';
+	import Hamburger from './shared/Hamburger.svelte';
 	import Fa from 'svelte-fa';
 	import {
-		faBars,
 		faHome,
-		faFire,
 		faChevronCircleDown,
 		faPlayCircle,
 		faHistory,
 		faClock
 	} from '@fortawesome/free-solid-svg-icons';
-	import { onMount } from 'svelte';
 
 	let active = false;
 
-	onMount(() => {
-		const showMenu = document.getElementById('show-menu');
-		const navMenu = document.getElementById('nav-menu');
-
-		showMenu?.addEventListener('click', () => {
-			navMenu?.classList.toggle('active');
-		});
-		return () => {
-			showMenu?.removeEventListener('click', () => {
-				navMenu?.classList.toggle('active');
-			});
-		};
-	});
+	function toggleMenu() {
+		active = !active;
+	}
 </script>
 
 <div id="navbar">
-	<a href="#" class="menu__bars" id="show-menu">
-		<Fa icon={faBars} />
+	<a href="#" class="menu__bars" id="show-menu" on:click={toggleMenu}>
+		<Hamburger {active} />
 		<h1>LOGO</h1>
 	</a>
 </div>
 <nav id="nav-menu" class:active>
-	<ul class="nav__menu-items">
-		<hr />
-		<div class="nav__section">
-			<li class="nav__text">
-				<a href="#">
-					<Fa icon={faHome} /> Home
-				</a>
-			</li>
-			<li class="nav__text">
-				<a href="#">
-					<Fa icon={faFire} /> Trending
-				</a>
-			</li>
-			<li class="nav__text">
-				<a href="#">
-					<Fa icon={faChevronCircleDown} /> Subscriptions
-				</a>
-			</li>
-		</div>
-		<hr />
-		<div class="nav__section">
-			<li class="nav__text">
-				<a href="#">
-					<Fa icon={faPlayCircle} /> Library
-				</a>
-			</li>
-			<li class="nav__text">
-				<a href="#">
-					<Fa icon={faHistory} /> History
-				</a>
-			</li>
-			<li class="nav__text">
-				<a href="#">
-					<Fa icon={faClock} /> Watch Later
-				</a>
-			</li>
-		</div>
-	</ul>
+	<hr />
+	<div class="nav__section">
+		<a class="nav__item" href="#">
+			<Fa icon={faHome} /> Home
+		</a>
+		<NavDrop title="Components" />
+		<a class="nav__item" href="#">
+			<Fa icon={faChevronCircleDown} /> Subscriptions
+		</a>
+	</div>
+	<hr />
+	<div class="nav__section">
+		<a class="nav__item" href="#">
+			<Fa icon={faPlayCircle} /> Library
+		</a>
+		<a class="nav__item" href="#">
+			<Fa icon={faHistory} /> History
+		</a>
+		<a class="nav__item" href="#">
+			<Fa icon={faClock} /> Watch Later
+		</a>
+	</div>
 </nav>
 
 <style>
@@ -112,7 +85,9 @@
 		width: 250px;
 		height: 100vh;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
 		position: fixed;
 		top: 100px;
 		left: -100%;
@@ -124,15 +99,12 @@
 		left: 0;
 	}
 
-	.nav__text {
+	.nav__item {
 		display: flex;
 		justify-content: flex-start;
 		list-style: none;
 		height: 60px;
 		padding: 1rem;
-	}
-
-	.nav__text a {
 		color: #f5f5f5;
 		text-decoration: none;
 		font-size: 1.2rem;
@@ -140,25 +112,13 @@
 		align-items: center;
 		transition: 0.3s;
 		gap: 1rem;
-	}
-
-	.nav__text a:hover {
-		background-color: rgba(144, 144, 144, 0.219);
-	}
-
-	.nav__menu-items {
 		width: 100%;
 	}
-
-	.nav__icon {
-		padding-inline-end: 1rem;
-		color: #909090;
-	}
-
 	.nav__section {
-		height: 200px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
+
+	/* Icon */
 </style>

@@ -11,10 +11,11 @@
 	}
 </script>
 
-{#if !toggle}
-	<SidebarNav />
+<!-- {#if !toggle}
+	
 {:else}
 	<Navbar />
 {/if}
-<Toggle bind:checked={toggle} on:click={toggleSidebar} />
+<Toggle bind:checked={toggle} on:click={toggleSidebar} /> -->
+<SidebarNav />
 <slot />
